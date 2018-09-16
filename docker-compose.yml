@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  cuttle:
+    build:
+      context: .
+    ports:
+      - "3128:3128"
+    restart: always
+    volumes:
+      - ./config:/opt/cuttle/config
