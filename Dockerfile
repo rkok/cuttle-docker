@@ -11,4 +11,5 @@ RUN mkdir -p /opt/cuttle \
 # Clean up (trims image size)
 RUN apk del git && rm -rf /var/cache/apk/*
 
+EXPOSE 3128
 CMD cd /opt/cuttle && bin/cuttle -f config/cuttle.yml
