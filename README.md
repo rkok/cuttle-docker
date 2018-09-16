@@ -13,3 +13,30 @@ wget -O config/cuttle.yml https://raw.githubusercontent.com/mrkschan/cuttle/mast
 # Run
 docker-compose up --build
 ```
+
+Extending
+---------
+
+Example usage:
+
+1. Create cuttle.yml:
+    ```
+    wget -O config/cuttle.yml https://raw.githubusercontent.com/mrkschan/cuttle/master/cuttle.yml
+    ```
+
+2. Create a Dockerfile, containing:
+    ```
+    FROM rkok1/cuttle
+    COPY cuttle.yml /opt/cuttle/config/
+    ```
+
+3. The usual:
+    ```
+    docker build . -t mycuttle
+    docker run -p 3128:3128 mycuttle
+    ```
+
+4. Test:
+    ```
+    http_proxy=http://localhost:3128 curl -v http://openbsd.org
+    ```
