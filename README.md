@@ -35,7 +35,7 @@ Example usage:
 3. The usual:
     ```
     docker build . -t mycuttle
-    docker run -p 3128:3128 mycuttle
+    docker run -p 127.0.0.1:3128:3128 mycuttle
     ```
 
 4. Test:
